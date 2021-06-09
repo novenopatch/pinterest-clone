@@ -37,7 +37,9 @@ class PinsController extends AbstractController
             $em->flush();
            }
            
-           return $this->redirect('/');
+           #return $this->redirect($this->generateUrl('app_home'));
+           return $this->redirect('https://www.google.com');
+           return $this->redirectToRoute('app_home');
         }
         
        

@@ -1,9 +1,9 @@
-home:
+app_home:
   path: /
   controller: App\Controller\PinsController::index
   
 
-addPins:
+app_pins_create:
   path: /pins/create
   controller: App\Controller\PinsController::create
   methods: GET|POST

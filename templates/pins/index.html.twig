@@ -6,6 +6,13 @@
     </head>
     <body>
     <h1>Pins</h1>
+    {% for pin in pins %}
+        <article>
+        <h1>{{pin.getTitle()}}</h1>
+        <p>{{pin.getDescription()}}</p>
+        </article>
+    {% endfor %}
+    
         
     </body>
 </html>

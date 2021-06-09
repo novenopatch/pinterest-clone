@@ -1,7 +1,12 @@
 home:
   path: /
   controller: App\Controller\PinsController::index
+  
 
+addPins:
+  path: /pins/create
+  controller: App\Controller\PinsController::create
+  methods: GET|POST
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index

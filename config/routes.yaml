@@ -1,6 +1,7 @@
 app_home:
   path: /
   controller: App\Controller\PinsController::index
+  methods: GET
   
 
 app_pins_create:

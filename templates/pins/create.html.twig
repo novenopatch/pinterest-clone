@@ -3,25 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-<h1>create pin</h1>
 
 
-</head>
-<body>
-            <form  method="POST">
-            <input type="hidden" id="_token" value="{{ csrf_token('pins_create') }}">
-            <div>
-                <label for="title">Title</label></br>
-                <input type="text" id="title" name="title">
 
-            </div>
-            
-            <div>
-                <label for="description">Description</label></br>
-                <textarea  id="description" name="description" rows="5" cols="60"></textarea>
-                
-            </div>
-            <input type="submit" value="Create Pin">
-            </from>
+    </head>
+    <body>
+        <h1>create pin</h1>  
+        {{ form(form)}}
     </body>
 </html>

@@ -27,8 +27,8 @@ class PinsController extends AbstractController
     }
     public function create(Request $request,EntityManagerInterface $em): Response
     {
-        $defaultData = ['title'=>'cool','description'=>'pas cool'];#$defaultData = new Pin;
-        $form = $this->createFormBuilder($defaultData)
+       $pin = new Pin;
+        $form = $this->createFormBuilder($pin)
             ->add('title', TextType::class,['attr'=>['autofocus'=>'true']])
             ->add('description',TextareaType::class,[
                 'required'=>false,'attr'=>['row'=>'10','cols'=>'60']
@@ -38,10 +38,6 @@ class PinsController extends AbstractController
         ;
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $data = $form->getData();
-            $pin = new Pin;
-            $pin->setTitle($data['title']);
-            $pin->setDescription($data['description']);
             $em->persist($pin);
             $em->flush();
 

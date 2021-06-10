@@ -5,14 +5,18 @@
         <title>Pinterest clone</title>
     </head>
     <body>
-    <h1>Pins Index</h1>
+    <h1>All pin</h1>
     <a href="{{ path('app_pins_create') }}">Create Pin</a>
+    {% if pins|length > 0 %}
     {% for pin in pins %}
         <article>
         <h1>{{pin.getTitle()}}</h1>
         <p>{{pin.getDescription()}}</p>
         </article>
     {% endfor %}
+    {% else %}
+        <p>Sorry, no pins yet!</p>
+    {% endif %}
     
         
     </body>

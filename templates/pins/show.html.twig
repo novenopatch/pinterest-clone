@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Show pin{{ pin.getTitle() }}</title>
-
-
-
-    </head>
-
-
- <body>
-       <h1>{{ pin.getTitle() }}</h1>
+{% extends 'base.html.twig' %}
+    {% block title %}
+        Show pin{{ pin.getTitle() }}
+    {% endblock %}
+    {% block body %}
+         <h1>{{ pin.getTitle() }}</h1>
 
         <p>{{pin.getDescription()}}</p>
-
-        
-    </body>
-</html>
+            {#  path chemin relatif#} 
+            {#  url chemin absolue #} 
+        <a href="{{ path('app_home') }}">Back</a>
+    {% endblock %}

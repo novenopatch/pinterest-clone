@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Create </title>
-
-
-
-    </head>
-    <body>
+{% extends 'base.html.twig' %}
+    {% block title %}
+      Create
+    {% endblock %}
+    {% block body %}
         <h1>create pin</h1> 
             {#  comment twig#} 
             {{ form_start(form) }}
@@ -15,8 +10,10 @@
 
                 <input type="submit" value="Create Pin">
             {{ form_end(form) }}
-            
+    {% endblock %}
 
-        
-    </body>
-</html>
+
+
+
+
+

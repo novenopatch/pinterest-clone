@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Pinterest clone</title>
-    </head>
-    <body>
-    <h1>All pin</h1>
-    <a href="{{ path('app_pins_create') }}">Create Pin</a>
-   {% set twigv = pins|length  %}
-    {% for pin in pins %}
-        <article>
-        <h1>{{pin.getTitle()}}</h1>
-        <p>{{pin.getDescription()}}</p>
-        </article>
-        {% else %}
-        <p>Sorry, no pins yet!</p>
-    {% endfor %}
-   
-    
-    
-        
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+    {% block title %}
+      Pinterest clone
+    {% endblock %}
+    {% block body %}
+        <h1>All pin</h1>
+        <a href="{{ path('app_pins_create') }}">Create Pin</a>
+        {% set twigv = pins|length  %}
+        {% for pin in pins %}
+            <article>
+                <h1> <a href="{{ path('app_pins_show',{'id':pin.id}) }}">{{pin.getTitle()}}</a> </h1>
+                <p>{{pin.getDescription()}}</p>
+            </article>
+            {% else %}
+            <p>Sorry, no pins yet!</p>
+        {% endfor %}
+    {% endblock %}
+
+
+
+
+
+
+

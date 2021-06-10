@@ -25,6 +25,9 @@ class PinsController extends AbstractController
     }
     public function show(PinRepository $repo,int $id): Response{
         $pin = $repo->find($id);
+        if(!$pin){
+            throw $this->createNotFoundException('Pin#'.$id.' not found');
+        }
         return $this->render('pins/show.html.twig',compact('pin'));
     }
     public function create(Request $request,EntityManagerInterface $em): Response

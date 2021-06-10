@@ -29,11 +29,10 @@ class PinsController extends AbstractController
     {
        $pin = new Pin;
         $form = $this->createFormBuilder($pin)
-            ->add('title', TextType::class,['attr'=>['autofocus'=>'true']])
-            ->add('description',TextareaType::class,[
+            ->add('title', null,['attr'=>['autofocus'=>'true']])
+            ->add('description',null,[
                 'required'=>false,'attr'=>['row'=>'10','cols'=>'60']
                 ])
-            ->add('submit',SubmitType::class,['label'=>'Create Pin'])
             ->getForm()
         ;
         $form->handleRequest($request);

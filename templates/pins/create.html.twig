@@ -10,7 +10,12 @@
     <body>
         <h1>create pin</h1> 
             {#  comment twig#} 
-         {{ form(form)}} 
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+
+                <input type="submit" value="Create Pin">
+            {{ form_end(form) }}
+            
 
         
     </body>

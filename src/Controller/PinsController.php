@@ -23,6 +23,10 @@ class PinsController extends AbstractController
 
         return $this->render('pins/index.html.twig',['pins'=>$repo->findAll()]);
     }
+    public function show(PinRepository $repo,int $id): Response{
+        $pin = $repo->find($id);
+        return $this->render('pins/show.html.twig',compact('pin'));
+    }
     public function create(Request $request,EntityManagerInterface $em): Response
     {
        $pin = new Pin;
